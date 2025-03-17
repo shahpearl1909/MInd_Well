@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindWell - Mental Health Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+                <span>MindWell</span>
+            </a>
+            
+            <button class="hamburger-button" aria-label="Toggle Navigation">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+  
+            <div class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood-tracker.html">Mood Tracker</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="resources.html">Resources</a></li>   
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+
+        <div class="image-carousel">
+            <div class="carousel-container">
+                <button class="carousel-button prev">❮</button>
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://static.vecteezy.com/system/resources/previews/024/066/680/non_2x/serenity-in-motion-woman-engaging-in-sunset-yoga-on-lake-pier-ai-generated-free-photo.jpg" alt="Mental Health Support">
+                        <div class="carousel-caption">Empowering Your Mental Wellness Journey</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://prod-us-east-1-hd-cms-uploads.s3.amazonaws.com/cms_uploads/en_US/img/happifiers/sensory-experiences-to-build-mindfulness-1.jpg" alt="Self Care">
+                        <div class="carousel-caption">Discover the Power of Self-Care</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://www.chicagotribune.com/wp-content/uploads/migration/2018/07/02/GBSUK2Q7JZHJ7DV34NXUAQYBMA.jpg?w=879" alt="Mindfulness">
+                        <div class="carousel-caption">Practice Mindfulness Daily</div>
+                    </div>
+                </div>
+                <button class="carousel-button next">❯</button>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+
+        <div class="hero">
+            <h1>Welcome to MindWell</h1><br>
+            <p>Your journey to better mental health starts here</p>
+            <br>
+            <p>This website provides accessible and reliable resources to individuals seeking mental health support. Our goal is to break the stigma, empower people to take control of their mental well-being, and foster a welcoming community for healing.</p>
+        </div>
+        <br>
+        <hr><hr><hr><hr>
+        <br>
+
+        <div class="features">
+            <div  class="feature-card"> 
+                <a href="mood-tracker.html"><h2>Track Your Mood</h2></a>
+                <p>Monitor your daily emotional well-being and identify patterns over time.</p>
+                <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&q=80&w=800" alt="Mood Tracking">
+            </div>
+
+            <div class="feature-card">
+                <a href="quizzes.html"><h2>Take Our Quizzes</h2></a>
+                <p>Discover insights about yourself through our engaging mental health quizzes.</p>
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800" alt="Mental Health Quizzes">
+            </div>
+
+            <div class="feature-card">
+                <a href="diary.html"><h2>Write it down</h2></a>
+                <p>Writing in a diary can reduce stress, clarify emotions, and improve well-being.</p>
+                <img src="https://cdn.shopify.com/s/files/1/0503/2794/5379/files/S_S-BLOG-9-Reasons-to-Start-Writing2_e223b693-96a4-4b5c-8919-4ab4f0c0fd97.jpg?v=1632727370" alt="Mental Health Resources">
+            </div>
+
+            <div class="feature-card">
+                <a href="resources.html"><h2>Find Help</h2></a>
+                <p>Access valuable resources and professional support when you need it.</p>
+                <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800" alt="Mental Health Resources">
+            </div>
+
+            
+        </div>
+    </main>
+
+    
+    <div class="header">
+        <center>
+      <br>
+        <h1>The Importance of Mental Health</h2>
+      <br><hr><br>
+        <p>
+            Mental health is a fundamental aspect of overall well-being that affects how we think, feel, and act. It plays a crucial role in managing stress, building relationships, and making decisions. When neglected, it can lead to long-term issues, affecting not just emotional but also physical health.
+          <br><br>
+          Prioritizing mental health helps individuals cope better with life’s challenges, promotes personal growth, and enhances overall happiness. Taking care of mental well-being allows people to achieve their goals and engage more fully in their communities. By strengthening mental health, we create a more empathetic and resilient society.
+        </p>
+        </center>
+    </div>  
+    
+
+    <footer>
+        <p>&copy; 2025 MindWell. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+        const dotsContainer = document.querySelector('.carousel-dots');
+
+        let currentSlide = 0;
+        const slideWidth = slides[0].getBoundingClientRect().width;
+
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        slides.forEach((slide, index) => {
+            slide.style.left = slideWidth * index + 'px';
+        });
+
+        function updateDots(newSlide) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[newSlide].classList.add('active');
+        }
+
+        function goToSlide(slideIndex) {
+            track.style.transform = `translateX(-${slideWidth * slideIndex}px)`;
+            currentSlide = slideIndex;
+            updateDots(currentSlide);
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            goToSlide(currentSlide);
+        });
+
+
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(currentSlide);
+        });
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            goToSlide(currentSlide);
+        }, 5000);
+    </script>
+</body>
+</html>

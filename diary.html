@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary - MindWell</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="diary.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+                <span>MindWell</span>
+            </a>
+            
+            <!-- Hamburger Button -->
+            <button class="hamburger-button" aria-label="Toggle Navigation">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+  
+            <div class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood-tracker.html">Mood Tracker</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="resources.html">Resources</a></li>   
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Diary</h1>
+        
+        <!-- Diary Entry Section -->
+        <div class="diary-entry-form">
+            <textarea id="diaryEntry" rows="5" placeholder="Write your thoughts here..."></textarea>
+            <button id="logDiaryBtn" class="btn-primary">Log Diary Entry</button>
+            <p id="diaryMessage"></p>
+        </div>
+        <br>
+        <!-- Toggle History Section -->
+        <div>
+            <button id="toggleHistoryBtn" class="btn-primary">Show/Hide Diary History</button>
+        </div>
+
+        <div id="diaryHistory" style="display: none;">
+            <h3>Diary History</h3>
+            <ul id="historyList"></ul>
+        <!-- Clear History Button -->
+            <button id="clearHistoryBtn" class="btn-danger">Clear History</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MindWell. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>  

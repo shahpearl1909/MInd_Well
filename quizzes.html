@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Quizzes - MindWell</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+    <style>
+        /* Progress bar container */
+        .progress-container {
+            width: 100%;
+            height: 12px;
+            background-color: #e0e0e0;
+            border-radius: 6px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+       
+        /* Progress bar itself */
+        .progress-bar {
+            height: 100%;
+            width: 0%; /* Initial width */
+            background-color: #e94343; /* Red color*/
+            transition: width 0.5s ease-out;
+        }
+
+
+        /* Info above progress bar */
+        .info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+
+        .info div {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+                <span>MindWell</span>
+            </a>
+            <!-- Hamburger Button -->
+            <button class="hamburger-button" aria-label="Toggle Navigation">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+            <div class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood-tracker.html">Mood Tracker</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="resources.html">Resources</a></li>  
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container">
+        <h1>Mental Health Quizzes</h1>
+
+
+        <div class="quiz-grid">
+            <div class="quiz-card" data-quiz="stress">
+                <img src="https://images.unsplash.com/photo-1494459158735-82f8feb14abb?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN0cmVzc3xlbnwwfHwwfHx8MA%3D%3D" alt="Stress Management Quiz">
+                <div class="quiz-content">
+                    <h3>What's Your Stress Management Style?</h3>
+                    <p>Discover how you naturally cope with stress and learn better strategies.</p><br>
+                    <button class="btn-primary start-quiz">Take Quiz</button>
+                </div>
+            </div>
+
+
+            <div class="quiz-card" data-quiz="emotional">
+                <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=800" alt="Emotional Intelligence Quiz">
+                <div class="quiz-content">
+                    <h3>Understanding Your Emotional Intelligence</h3>
+                    <p>Explore your ability to understand and manage emotions.</p><br>
+                    <button class="btn-primary start-quiz">Take Quiz</button>
+                </div>
+            </div>
+
+
+            <div class="quiz-card" data-quiz="selfcare">
+                <img src="https://media.istockphoto.com/id/2163819277/photo/young-woman-explores-headland-at-sunset.webp?a=1&b=1&s=612x612&w=0&k=20&c=o1Mtomkad5QhCgqofDNto52tH915PwaGVo6VzxIsWFs=" alt="Self-Care Quiz">
+                <div class="quiz-content">
+                    <h3>Self-Care Assessment</h3>
+                    <p>How well are you taking care of yourself? Find out with this quiz.</p><br>
+                    <button class="btn-primary start-quiz">Take Quiz</button>
+                </div>
+            </div>
+
+
+            <div class="quiz-card" data-quiz="mindfulness">
+                <img src="https://images.unsplash.com/photo-1505455184862-554165e5f6ba?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWluZGZ1bG5lc3N8ZW58MHx8MHx8fDA%3D" alt="Mindfulness Quiz">
+                <div class="quiz-content">
+                    <h3>Mindfulness Assessment</h3>
+                    <p>Explore your ability to manage stress and maintain balance in life through mindfulness practices.</p><br>
+                    <button class="btn-primary start-quiz">Take Quiz</button>
+                </div>
+            </div>
+           
+
+
+           
+           
+
+
+        </div>
+
+
+        <!-- Quiz Modal with Timer and Progress Bar -->
+        <div id="quizModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="quizContent"></div>
+                <div id="timer" class="quiz-timer"></div>
+
+
+                <!-- Progress Bar Section -->
+                <div class="info">
+                    <div>Question <span id="current">1</span> of <span id="total">5</span></div>
+                    <div><span id="percent">0</span>% Complete</div>
+                </div>
+                <div class="progress-container">
+                    <div id="progress" class="progress-bar"></div>
+                </div>
+
+
+                <!-- Quiz Controls -->
+                <div class="quiz-controls">
+                    <button class="prev-question">Previous</button><br><br>
+                    <button class="next-question">Next</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="notification" class="notification">
+            <p>Time's running out! Would you like more time?</p>
+            <button class="btn-primary extend-time">Add 5 Minutes</button>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 MindWell. All rights reserved.</p>
+    </footer>
+
+
+    <script src="quizzes.js" defer></script>
+</body>
+</html>
+
+
+
+
+
