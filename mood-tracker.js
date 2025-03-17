@@ -118,29 +118,6 @@ function toggleMoodHistory(event) {
 // Event listener to toggle the mood history visibility
 document.getElementById('toggleHistoryBtn').addEventListener('click', toggleMoodHistory);
 
-// Handle form submission for mood logging
-document.getElementById('moodForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const mood = parseInt(document.getElementById('moodRange').value);
-    const notes = document.getElementById('moodNotes').value;
-    const date = new Date().toISOString().split('T')[0];
-
-    const newEntry = { date, mood, notes };
-    moodEntries.push(newEntry);
-    
-    // Save to localStorage
-    localStorage.setItem('moodEntries', JSON.stringify(moodEntries));
-    
-    // Update chart
-    updateChart();
-    
-    // Reset form
-    document.getElementById('moodNotes').value = '';
-    
-    // Show success message
-    alert('Mood logged successfully!');
-});
 
 // Initialize the page with stored mood entries from localStorage
 window.addEventListener('load', () => {
